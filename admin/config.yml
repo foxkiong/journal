@@ -1,0 +1,39 @@
+# Sveltia CMS Configuration for 狐狸筆記 (foxkiong/journal)
+backend:
+  name: github
+  repo: foxkiong/journal
+  branch: master
+  auth_methods:
+    - token
+
+# Media storage
+media_folder: "assets/images"
+public_folder: "/journal/assets/images"
+
+# UI Display
+locale: "zh_Hant"
+site_url: "https://foxkiong.github.io/journal/"
+display_url: "https://foxkiong.github.io/journal/"
+
+# Content Collections
+collections:
+  - name: "posts"
+    label: "文章 (Posts)"
+    label_singular: "文章"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: true
+    summary: "{{title}} ({{date | date('YYYY-MM-DD')}})"
+    sortable_fields: ["date", "title"]
+    view_filters:
+      - label: "今年文章"
+        field: "date"
+        pattern: "2026"
+    fields:
+      - { label: "版面", name: "layout", widget: "hidden", default: "post" }
+      - { label: "文章標題", name: "title", widget: "string", required: true }
+      - { label: "發布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss ZZ", date_format: "YYYY-MM-DD", time_format: "HH:mm", required: true }
+      - { label: "作者", name: "author", widget: "string", default: "狐狸" }
+      - { label: "正文內容", name: "body", widget: "markdown", required: true }

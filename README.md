@@ -21,6 +21,19 @@
 
 ## ✍️ 如何發布新文章
 
+### 方法一：手機網頁後台（Sveltia CMS，最推薦）
+1. 在手機瀏覽器（Chrome 或 Safari）打開：  
+   👉 **[https://foxkiong.github.io/journal/admin/](https://foxkiong.github.io/journal/admin/)**
+2. 點擊瀏覽器選單中的 **「加到主畫面」**，它會像手機 App 一樣常駐在你的桌面。
+3. 首次登入請使用你的 **GitHub 個人存取權杖 (Personal Access Token)**（具備 `repo` 權限）。瀏覽器會自動記住，日後點開即用。
+4. 點擊 **「新增文章」**：
+   - 填寫標題與正文。
+   - 點擊工具列的 **圖片圖示**，可直接從手機相簿挑選相片或拍照上傳。
+   - 點擊 **「發布」**，系統將自動提交至 GitHub 並在 1 分鐘內更新網站。
+
+---
+
+### 方法二：本機 Git 指令發布
 只需在 `_posts/` 目錄下新增 Markdown 檔案：
 
 1. **命名格式**：`YYYY-MM-DD-文章標題.md`  
