@@ -1,0 +1,24 @@
+<header class="site-header">
+  <div class="site-branding">
+    <h1 class="site-title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+    {% if site.subtitle %}
+      <p class="site-subtitle">{{ site.subtitle }}</p>
+    {% endif %}
+  </div>
+
+  <nav class="site-nav">
+    <div class="nav-links">
+      <a href="{{ site.baseurl }}/" class="nav-item">首頁</a>
+      <a href="{{ site.baseurl }}/archive/" class="nav-item">文章歸檔</a>
+      <a href="{{ site.baseurl }}/about/" class="nav-item">關於</a>
+      <a href="https://foxkiong.github.io/myBlog/" class="nav-item nav-external" title="瀏覽 2005-2018 舊網誌存檔" target="_blank" rel="noopener">舊網誌存檔 ↗</a>
+    </div>
+
+    <div class="font-resizer" aria-label="字級切換">
+      <span class="resizer-label">字體：</span>
+      <button type="button" class="font-btn" data-size="standard" title="標準字級 (21px)">標準</button>
+      <button type="button" class="font-btn" data-size="large" title="大字級 (24px)">大字</button>
+      <button type="button" class="font-btn" data-size="xlarge" title="特大字級 (28px)">特大</button>
+    </div>
+  </nav>
+</header>

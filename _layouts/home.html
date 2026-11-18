@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<div class="home-intro">
+  {{ content }}
+</div>
+
+<section class="home-posts" aria-labelledby="recent-posts-heading">
+  <h2 id="recent-posts-heading">最新文章</h2>
+
+  <ul class="post-list">
+    {% for post in site.posts limit: 10 %}
+      <li class="post-item">
+        <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: "%Y 年 %m 月 %d 日" }}
+        </time>
+        <h3 class="post-item-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        {% if post.excerpt %}
+          <div class="post-excerpt">
+            {{ post.excerpt | strip_html | truncate: 140 }}
+          </div>
+        {% endif %}
+      </li>
+    {% else %}
+      <li class="post-item">
+        <p class="post-excerpt">目前尚無文章，歡迎隨時發表新篇章。</p>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% if site.posts.size > 10 %}
+    <p style="text-align: center; margin-top: 2rem;">
+      <a href="{{ '/archive/' | relative_url }}" class="archive-link">查看全部 {{ site.posts.size }} 篇文章歸檔 →</a>
+    </p>
+  {% endif %}
+</section>

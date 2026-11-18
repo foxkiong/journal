@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<article class="page-article">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="site-subtitle">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+
+    {% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+    {% for yearGroup in postsByYear %}
+      <h2 class="archive-year-heading" id="year-{{ yearGroup.name }}">{{ yearGroup.name }} 年 ({{ yearGroup.items.size }} 篇)</h2>
+      <ul class="archive-list">
+        {% for post in yearGroup.items %}
+          <li class="archive-item">
+            <time class="archive-date" datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%m 月 %d 日" }}
+            </time>
+            <a href="{{ post.url | relative_url }}" class="archive-link">
+              {{ post.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>目前尚無文章記錄。</p>
+    {% endfor %}
+  </div>
+</article>

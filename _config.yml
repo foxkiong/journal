@@ -1,0 +1,29 @@
+title: "狐狸筆記"
+subtitle: "隨想 · 閱讀 · 生活"
+description: "極簡大字閱讀誌，記錄未來的思考、閱讀與生活點滴。"
+url: "https://foxkiong.github.io"
+baseurl: "/journal"
+
+author:
+  name: "狐狸"
+  email: "sskiong.fox@gmail.com"
+
+# Post permalinks
+permalink: /posts/:year/:title/
+
+# Markdown engine
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Header navigation
+header_pages:
+  - archive.md
+  - about.md
+
+# Build settings
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
