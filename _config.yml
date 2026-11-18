@@ -22,6 +22,10 @@ header_pages:
   - archive.md
   - about.md
 
+# Plugins
+plugins:
+  - jekyll-feed
+
 # Build settings
 exclude:
   - README.md
